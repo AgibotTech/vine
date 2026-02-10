@@ -150,9 +150,9 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Hero figure */
+/* Hero figure — compact, no black edges */
 .hero-figure {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   background: var(--surface);
   border-radius: var(--radius);
   overflow: hidden;
@@ -164,13 +164,14 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: cover;
   vertical-align: top;
 }
 
 .caption {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
 }
@@ -249,11 +250,11 @@ section h2 {
   font-size: 0.95rem;
 }
 
-/* Media rows: 1×3, 1×2, 1×1 */
+/* Media rows: 1×3, 1×2, 1×1 — compact, no black bars */
 .media-row {
   display: grid;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .media-row-3 {
@@ -264,10 +265,15 @@ section h2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* Q-value: keep two curves side-by-side (parallel) */
+/* Q-value: keep two curves side-by-side (parallel), show full image */
 .q-value .media-row-2 {
   grid-template-columns: 1fr 1fr;
   align-items: start;
+}
+
+.q-value figure img {
+  object-fit: contain;
+  background: var(--surface);
 }
 
 .media-row-1 {
@@ -294,24 +300,38 @@ section h2 {
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
 
-.media-row figure video,
-.media-row figure img,
-.media-row figure object {
+/* Video: fill fixed aspect ratio, no black letterboxing */
+.media-row figure video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+.media-row figure img {
   display: block;
   width: 100%;
   height: auto;
   vertical-align: top;
+  object-fit: cover;
 }
 
 .media-row figure object {
-  min-height: 320px;
+  display: block;
+  width: 100%;
+  min-height: 280px;
+  background: var(--surface);
+  vertical-align: top;
 }
 
 .media-row figure figcaption {
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
 }
