@@ -57,120 +57,120 @@
       </p>
       <div class="hero-figure">
         <img src="images/teaser.png" alt="ALOE overview: actor–critic framework for VLA post-training." width="960" height="400" loading="eager" onerror="this.src='https://placehold.co/960x400/1a1a2e/eee?text=ALOE+Teaser'; this.onerror=null;" />
-        <p class="caption">Overview of our real-world actor–critic framework for VLA post-training: actor (flow-matching VLA) + critic (ensemble Q-network), with data collection under human intervention, off-policy critic estimation, and policy improvement.</p>
+        <p class="caption">Overview of our real-world actor–critic framework for VLA post-training.</p>
       </div>
     </section>
 
     <section class="task-demos-and-results">
       <h2>Task Demos & Final Results</h2>
-      <h3 class="subsection-title">Task Demos (algorithm rollout)</h3>
-      <p class="section-desc">Rollout results on three real-world manipulation tasks: smartphone packing (high-precision), laundry folding (long-horizon deformable), and bimanual pick-and-place (multi-object perception).</p>
+      <h3 class="subsection-title">Task Demos</h3>
+      <p class="section-desc">We evaluate ALOE on three representative tasks designed to stress long-horizon reasoning, precise action selection, and robustness: <strong>Pack Smart Phone</strong> (align and attach phone case onto device body; precise pose alignment and recovery from misalignment), <strong>Folding Laundry</strong> (long-horizon deformable-object manipulation with grasp, flatten, and sequential folds), and <strong>Product Sorting</strong> (bimanual pick-place: identify, manipulate, and place objects from bins onto a conveyor belt).</p>
       <div class="media-row media-row-3">
         <figure>
           <video src="videos/phone_demo.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Smartphone packing</figcaption>
+          <figcaption>Pack Smart Phone</figcaption>
         </figure>
         <figure>
           <video src="videos/cloth_demo.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Laundry folding</figcaption>
+          <figcaption>Folding Laundry</figcaption>
         </figure>
         <figure>
           <video src="videos/pick_object_demo.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Bimanual pick-and-place</figcaption>
+          <figcaption>Product Sorting</figcaption>
         </figure>
       </div>
       <h3 class="subsection-title">Final Results</h3>
-      <p class="section-desc">Task success and learning curves across the three tasks (1×3).</p>
+      <p class="section-desc">Average success rate of the three manipulation tasks under real-world evaluation across multiple runs.</p>
       <div class="media-row media-row-3">
         <figure>
-          <object data="images/phone_final_result.pdf" type="application/pdf" width="100%" height="360" title="Phone packing final result">
-            <p><a href="images/phone_final_result.pdf">Download PDF</a> (Smartphone packing)</p>
+          <object data="images/phone_final_result.pdf" type="application/pdf" width="100%" height="360" title="Pack Smart Phone success rate">
+            <p><a href="images/phone_final_result.pdf">Download PDF</a></p>
           </object>
-          <figcaption>Smartphone packing</figcaption>
+          <figcaption>Pack Smart Phone</figcaption>
         </figure>
         <figure>
-          <object data="images/cloth_final_result.pdf" type="application/pdf" width="100%" height="360" title="Cloth folding final result">
-            <p><a href="images/cloth_final_result.pdf">Download PDF</a> (Laundry folding)</p>
+          <object data="images/cloth_final_result.pdf" type="application/pdf" width="100%" height="360" title="Folding Laundry success rate">
+            <p><a href="images/cloth_final_result.pdf">Download PDF</a></p>
           </object>
-          <figcaption>Laundry folding</figcaption>
+          <figcaption>Folding Laundry</figcaption>
         </figure>
         <figure>
-          <object data="images/object_final_result.pdf" type="application/pdf" width="100%" height="360" title="Pick-and-place final result">
-            <p><a href="images/object_final_result.pdf">Download PDF</a> (Bimanual pick-and-place)</p>
+          <object data="images/object_final_result.pdf" type="application/pdf" width="100%" height="360" title="Product Sorting success rate">
+            <p><a href="images/object_final_result.pdf">Download PDF</a></p>
           </object>
-          <figcaption>Bimanual pick-and-place</figcaption>
+          <figcaption>Product Sorting</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="continuous-operation">
       <h2>Continuous Operation</h2>
-      <p class="section-desc">In the smartphone packing task, the clearance between the packing tray and the phone is only 1–2 mm, leaving almost no extra space; the box is rigid cardboard with no deformation buffer. Under position control, slight pose errors easily lead to insertion failure, tipping, or material damage. The video below shows 21 consecutive trials with only 2 failures.</p>
+      <p class="section-desc">Pack Smart Phone is precision-critical: the phone case (17.8cm × 8.8cm) has minimal clearance inside the rigid container (17.5cm × 8.6cm). Under position control, slight pose errors can cause insertion failure, tipping, or damage. The video shows 21 consecutive trials with 19 successes.</p>
       <div class="media-row media-row-1">
         <figure>
           <video src="videos/phone_success_rate.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Smartphone packing: 21 trials, 2 failures (continuous operation)</figcaption>
+          <figcaption>Pack Smart Phone — 21 trials (19 success, 2 failure)</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="robustness">
       <h2>Robustness</h2>
-      <p class="section-desc">Recovery under external disturbances: phone case assembly with disturbance (×3), then cloth folding with disturbance.</p>
+      <p class="section-desc">We inject random perturbations during execution (e.g., to the garment in Folding Laundry or to the assembly in Pack Smart Phone) and measure whether the policy can re-adjust and still complete the task — evaluating recovery from unexpected disturbances.</p>
       <div class="media-row media-row-3">
         <figure>
           <video src="videos/phone_disturb_1.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Phone disturb 1</figcaption>
+          <figcaption>Pack Smart Phone — recovery under disturbance</figcaption>
         </figure>
         <figure>
           <video src="videos/phone_disturb_2.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Phone disturb 2</figcaption>
+          <figcaption>Pack Smart Phone — recovery under disturbance</figcaption>
         </figure>
         <figure>
           <video src="videos/phone_disturb_3.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Phone disturb 3</figcaption>
+          <figcaption>Pack Smart Phone — recovery under disturbance</figcaption>
         </figure>
       </div>
       <div class="media-row media-row-2">
         <figure>
           <video src="videos/cloth_disturb.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Cloth disturb</figcaption>
+          <figcaption>Folding Laundry — recovery under disturbance</figcaption>
         </figure>
         <figure>
-          <object data="images/Robustness.pdf" type="application/pdf" width="100%" height="360" title="Robustness bar results">
-            <p><a href="images/Robustness.pdf">Download PDF</a> (Robustness)</p>
+          <object data="images/Robustness.pdf" type="application/pdf" width="100%" height="360" title="Robustness evaluation">
+            <p><a href="images/Robustness.pdf">Download PDF</a></p>
           </object>
-          <figcaption>Robustness (bar results)</figcaption>
+          <figcaption>Robustness evaluation (recovery success under injected disturbances)</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="q-value">
       <h2>Q-Value Learning</h2>
-      <p class="section-desc">The Q-curve obtained by ALOE training can accurately capture the quality of key actions during execution, providing reliable signals for policy improvement.</p>
+      <p class="section-desc">The learned action-value function identifies failure modes and successful recovery: the Q-value drops sharply when the robot fails a critical action (e.g., scooping the phone) and rises on recovery, providing finer credit assignment than trajectory-level estimation.</p>
       <div class="media-row media-row-2">
         <figure>
-          <img src="images/Q_value2_cropped.png" alt="Q-value vs success" loading="eager" />
-          <figcaption>Q-value curve and task success correlation</figcaption>
+          <img src="images/Q_value2_cropped.png" alt="Q-value and task success" loading="eager" />
+          <figcaption>Q-value and task success correlation</figcaption>
         </figure>
         <figure>
-          <img src="images/q_visualization_additional.png" alt="Q-value visualization" loading="eager" />
-          <figcaption>Q-value visualization</figcaption>
+          <img src="images/q_visualization_additional.png" alt="Q(s,a) visualization" loading="eager" />
+          <figcaption>Additional Q(s,a) visualization</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="ood">
-      <h2>OOD Generalization</h2>
-      <p class="section-desc">Zero-shot generalization to unseen objects: pick unseen object 1 and 2.</p>
+      <h2>Zero-Shot Generalization</h2>
+      <p class="section-desc">We evaluate generalization on the Product Sorting task by replacing objects with ones never seen during training (different shapes and colors). The policy is evaluated without fine-tuning, assessing the VLA’s ability to generalize to unseen object appearances and geometries.</p>
       <div class="media-row media-row-2">
         <figure>
           <video src="videos/pick_unseen_object_1.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Pick unseen object 1</figcaption>
+          <figcaption>Product Sorting — unseen objects</figcaption>
         </figure>
         <figure>
           <video src="videos/pick_useen_object_2.mp4" controls muted loop playsinline autoplay></video>
-          <figcaption>Pick unseen object 2</figcaption>
+          <figcaption>Product Sorting — unseen objects</figcaption>
         </figure>
       </div>
     </section>
