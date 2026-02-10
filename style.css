@@ -271,11 +271,16 @@ section h2 {
 }
 
 .media-row figure video,
-.media-row figure img {
+.media-row figure img,
+.media-row figure object {
   display: block;
   width: 100%;
   height: auto;
   vertical-align: top;
+}
+
+.media-row figure object {
+  min-height: 320px;
 }
 
 .media-row figure figcaption {

@@ -5,5 +5,4 @@ RSS2026_RL_for_VLA_preprint_v0.zip
 # 系统与临时
 .DS_Store
 
-# images 下仅保留 teaser.png 用于主页，其余为论文图表不推送
-images/*.pdf
+# 论文源文件不推送；images/ 下可放 teaser.png、final result PDF 等

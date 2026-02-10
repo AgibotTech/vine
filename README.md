@@ -1,68 +1,70 @@
-# ALOE 论文项目主页
+# ALOE — Project Page
 
-本仓库是 ALOE 论文的配套项目主页，用于展示工作；论文将挂载于 arXiv，可在论文中放链接指向此页。
+Project page for **ALOE: Action-Level Off-Policy Evaluation for Vision-Language-Action Model Post-Training**. The paper will be available on arXiv; you can link to this page from the paper.
 
-## 本地预览
+## Local Preview
 
-在仓库根目录用任意静态服务器即可预览，例如：
+From the repo root, run a static server:
 
 ```bash
 # Python 3
 python -m http.server 8000
 
-# 或 npx
+# or
 npx serve .
 ```
 
-浏览器打开 `http://localhost:8000` 即可查看。
+Then open **http://localhost:8000** in your browser.
 
-## 需要修改的内容
+## Page Structure
 
-在 **`index.html`** 中按你的论文修改：
+Single-page layout with no pagination:
 
-| 位置 | 说明 |
-|------|------ |
-| `<title>` | 页面标题，建议与论文标题一致 |
-| `.paper-title` | 论文标题 |
-| `.paper-subtitle` | 可选：一句话描述或副标题 |
-| `.authors` | 作者列表，`href` 可改为个人主页/Google Scholar |
-| `.affiliations` | 单位列表，与作者上标对应 |
-| `.hero-figure img` | `src` 改为你的 teaser 图路径（可放 `images/teaser.png`） |
-| `.caption` | 主图说明文字 |
-| `.action-links` | **Paper (PDF)**、**Code**、**Video**、**Project Page** 的链接 |
-| `.abstract p` | 论文摘要 |
-| `.highlights ul` | 3–5 条亮点/贡献 |
-| `.citation pre` | BibTeX 条目，便于他人引用 |
+- **Abstract** — Paper abstract
+- **Method** — Short intro + teaser figure
+- **Task Demos** — Three task videos (phone, cloth, pick-and-place)
+- **Continuous Operation** — Phone packing 21-trial video
+- **Final Results** — 1×3 result figures (add `phone_final_result.png`, `cloth_final_result.png`, `object_final_result.png` under `images/` if needed)
+- **Robustness** — Phone disturb ×3 + cloth disturb ×1
+- **Q-Value Learning** — Q-value curve figure
+- **OOD Generalization** — Unseen object pick videos
+- **Contributions** — Bullet points
+- **Citation** — BibTeX (arXiv format; replace `XXXX.XXXXX` with real arXiv ID when available)
 
-图片建议放在仓库内（如 `images/`），便于在 GitHub 上稳定访问。
+## What to Edit
 
-## 在 GitHub 上发布（GitHub Pages）
+| Where | What |
+|-------|------|
+| **Action links** (top) | Set **Paper (PDF)** to your arXiv URL; **Code** and **Video** to repo/demo links |
+| **Authors** | Update `href` to personal/Google Scholar pages if desired |
+| **BibTeX** | Replace `eprint = {XXXX.XXXXX}` with your arXiv id (e.g. `2601.12345`) |
+| **images/** | Add `phone_final_result.png`, `cloth_final_result.png`, `object_final_result.png` if you use the Final Results section |
 
-1. 把本仓库 push 到你的 GitHub（例如 `username/paper-homepage`）。
-2. 打开仓库 **Settings → Pages**。
-3. **Source** 选 **Deploy from a branch**。
-4. **Branch** 选 `main`（或你用的默认分支），**Folder** 选 **/ (root)**。
-5. 保存后等一两分钟，页面地址为：
-   - `https://<username>.github.io/<repo-name>/`
+Videos in `videos/` and images in `images/` are used as-is; paths are in `index.html`.
 
-例如：`https://yourname.github.io/rss-paper/`。
+## GitHub Pages
 
-## 在论文里放链接
+1. Push this repo to GitHub (e.g. **Rooshy-yang/aloe**).
+2. Go to **Settings → Pages**.
+3. **Source**: Deploy from a branch.
+4. **Branch**: `main`, **Folder**: `/ (root)`.
+5. Save. After a minute or two, the site will be at:
+   - **https://rooshy-yang.github.io/aloe/**
 
-在论文中写项目主页链接时，直接使用上面得到的 GitHub Pages 地址，例如：
+## Link in Your Paper
 
-> Project page: https://yourname.github.io/rss-paper/
+In the paper, point to the project page:
 
-或：**Code & project page**: [link](https://yourname.github.io/rss-paper/)。
+> Project page: https://rooshy-yang.github.io/aloe/
 
-## 文件结构
+## Repo Layout
 
 ```
-homepage/
-├── index.html    # 主页面，需按论文内容修改
-├── style.css     # 样式，可按需调整
-├── README.md     # 本说明
-└── images/       # 可选：放 teaser 等图片
+├── index.html      # Main page
+├── style.css       # Styles
+├── README.md       # This file
+├── images/         # teaser.png, Q_value2_cropped.png, final result figures
+└── videos/         # Task demos, robustness, OOD, phone_success_rate, etc.
 ```
 
-修改完 `index.html` 和图片后，提交并 push 到 GitHub 即可更新在线主页。
+After editing, commit and push to update the live page.

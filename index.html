@@ -52,8 +52,7 @@
     <section class="abstract">
       <h2>Abstract</h2>
       <p>
-        We study how to improve large foundation vision-language-action (VLA) systems through online reinforcement learning (RL) in real-world settings. Central to this process is the value function, which provides learning signals to guide VLA learning from experience. In practice, the value function is estimated from trajectory fragments collected from different data sources, including historical policies and intermittent human interventions. Estimating the value function of current behavior quality from the mixture data is inherently an off-policy evaluation problem. However, prior work often adopts conservative on-policy estimation for stability, which avoids direct evaluation of the current high-capacity policy and limits learning effectiveness.
-        In this paper, we propose <strong>ALOE</strong>, an action-level off-policy evaluation framework for VLA post-training. ALOE applies chunking-based temporal-difference bootstrapping to evaluate individual action sequences instead of predicting final task outcomes. This design improves effective credit assignment to critical action chunks under sparse rewards and supports stable policy improvement. We evaluate our method on three real-world manipulation tasks, including smartphone packing as a high-precision task, laundry folding as a long-horizon deformable-object task, and bimanual pick-and-place involving multi-object perception. Across all tasks, ALOE improves learning efficiency without compromising execution speed, showing that off-policy RL can be reintroduced in a reliable manner for real-world VLA post-training.
+        We study how to improve large foundation vision-language-action (VLA) systems through online reinforcement learning (RL) in real-world settings. Central to this process is the value function, which provides learning signals to guide VLA learning from experience. In practice, the value function is estimated from trajectory fragments collected from different data sources, including historical policies and intermittent human interventions. Estimating the value function of current behavior quality from the mixture data is inherently an off-policy evaluation problem. However, prior work often adopts conservative on-policy estimation for stability, which avoids direct evaluation of the current high-capacity policy and limits learning effectiveness. In this paper, we propose <strong>ALOE</strong>, an action-level off-policy evaluation framework for VLA post-training. ALOE applies chunking-based temporal-difference bootstrapping to evaluate individual action sequences instead of predicting final task outcomes. This design improves effective credit assignment to critical action chunks under sparse rewards and supports stable policy improvement. We evaluate our method on three real-world manipulation tasks, including smartphone packing as a high-precision task, laundry folding as a long-horizon deformable-object task, and bimanual pick-and-place involving multi-object perception. Across all tasks, ALOE improves learning efficiency without compromising execution speed, showing that off-policy RL can be reintroduced in a reliable manner for real-world VLA post-training.
       </p>
     </section>
 
@@ -103,15 +102,21 @@
       <p class="section-desc">Task success and learning curves across the three tasks (1×3).</p>
       <div class="media-row media-row-3">
         <figure>
-          <img src="images/phone_final_result.png" alt="Phone packing final result" loading="eager" />
+          <object data="images/phone_final_result.pdf" type="application/pdf" width="100%" height="360" title="Phone packing final result">
+            <p><a href="images/phone_final_result.pdf">Download PDF</a> (Smartphone packing)</p>
+          </object>
           <figcaption>Smartphone packing</figcaption>
         </figure>
         <figure>
-          <img src="images/cloth_final_result.png" alt="Cloth folding final result" loading="eager" />
+          <object data="images/cloth_final_result.pdf" type="application/pdf" width="100%" height="360" title="Cloth folding final result">
+            <p><a href="images/cloth_final_result.pdf">Download PDF</a> (Laundry folding)</p>
+          </object>
           <figcaption>Laundry folding</figcaption>
         </figure>
         <figure>
-          <img src="images/object_final_result.png" alt="Pick-and-place final result" loading="eager" />
+          <object data="images/object_final_result.pdf" type="application/pdf" width="100%" height="360" title="Pick-and-place final result">
+            <p><a href="images/object_final_result.pdf">Download PDF</a> (Bimanual pick-and-place)</p>
+          </object>
           <figcaption>Bimanual pick-and-place</figcaption>
         </figure>
       </div>
