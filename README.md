@@ -24,7 +24,7 @@ Single-page layout with no pagination:
 - **Method** — Short intro + teaser figure
 - **Task Demos** — Three task videos (phone, cloth, pick-and-place)
 - **Continuous Operation** — Phone packing 21-trial video
-- **Final Results** — 1×3 result figures (add `phone_final_result.png`, `cloth_final_result.png`, `object_final_result.png` under `images/` if needed)
+- **Final Results** — three result figures (add `phone_final_result.pdf`, etc., under `images/` if needed)
 - **Robustness** — Phone disturb ×3 + cloth disturb ×1
 - **Q-Value Learning** — Q-value curve figure
 - **OOD Generalization** — Unseen object pick videos
