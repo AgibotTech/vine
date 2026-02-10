@@ -264,6 +264,12 @@ section h2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* Q-value: keep two curves side-by-side (parallel) */
+.q-value .media-row-2 {
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
 .media-row-1 {
   grid-template-columns: 1fr;
   max-width: 480px;
