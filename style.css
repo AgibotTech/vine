@@ -247,11 +247,18 @@ section h2 {
 .media-row-1 {
   grid-template-columns: 1fr;
   max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Continuous operation: single video, allow wider for compilation */
 .continuous-operation .media-row-1 {
   max-width: 720px;
+}
+
+/* Center all media rows (video/image blocks) within section */
+.media-row {
+  justify-items: center;
 }
 
 .media-row figure {
