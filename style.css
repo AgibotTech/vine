@@ -130,6 +130,26 @@ body {
   margin-left: 0.1rem;
 }
 
+/* Compact one-line affiliations */
+.affiliations--compact {
+  margin: 0 0 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.subsection-title {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--text);
+}
+
+.subsection-title:first-of-type {
+  margin-top: 0.5rem;
+}
+
 /* Hero figure */
 .hero-figure {
   margin-bottom: 2rem;
