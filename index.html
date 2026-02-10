@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALOE: Action-Level Off-Policy Evaluation for VLA Post-Training — RSS 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <span class="venue">Robotics: Science and Systems (RSS)</span>
+      <span class="year">2026</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="paper-title">ALOE: Action-Level Off-Policy Evaluation for Vision-Language-Action Model Post-Training</h1>
+    <p class="paper-subtitle">Real-world actor–critic RL for VLA with off-policy value estimation and human-in-the-loop data</p>
+
+    <ul class="authors">
+      <li><a href="#" target="_blank" rel="noopener">Rushuai Yang</a><sup>1,2</sup><span class="equal">*</span></li>
+      <li><a href="#" target="_blank" rel="noopener">Hecheng Wang</a><sup>1,3</sup><span class="equal">*</span></li>
+      <li><a href="#" target="_blank" rel="noopener">Chiming Liu</a><sup>1</sup><span class="equal">*†</span></li>
+      <li><a href="#" target="_blank" rel="noopener">Xiaohan Yan</a><sup>1</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Yunlong Wang</a><sup>1</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Xuan Du</a><sup>1</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Shuoyu Yue</a><sup>1</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Yongcheng Liu</a><sup>1</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Chuheng Zhang</a><sup>4</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Lizhe Qi</a><sup>3</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Yi Chen</a><sup>2</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Wei Shan</a><sup>1</sup></li>
+      <li><a href="#" target="_blank" rel="noopener">Maoqing Yao</a><sup>1</sup></li>
+    </ul>
+    <ul class="affiliations">
+      <li><sup>1</sup> AgiBot</li>
+      <li><sup>2</sup> The Hong Kong University of Science and Technology</li>
+      <li><sup>3</sup> Fudan University</li>
+      <li><sup>4</sup> Independent Researcher</li>
+      <li class="note"><span class="equal">*</span> Equal contribution &nbsp; <span class="equal">†</span> Corresponding author</li>
+    </ul>
+
+    <div class="hero-figure">
+      <img src="images/teaser.png" alt="ALOE overview: actor–critic framework for VLA post-training with real-world RL stages." width="960" height="400" onerror="this.src='https://placehold.co/960x400/1a1a2e/eee?text=ALOE+Teaser+%28add+images%2Fteaser.png%29'; this.onerror=null;" />
+      <p class="caption">Overview of our real-world actor–critic framework for VLA post-training: actor (flow-matching VLA) + critic (ensemble Q-network), with data collection under human intervention, off-policy critic estimation, and policy improvement. Evaluated on smartphone packing, laundry folding, and bimanual pick-and-place.</p>
+    </div>
+
+    <div class="action-links">
+      <a href="#" class="btn btn-primary">📄 Paper (PDF)</a>
+      <a href="#" class="btn btn-secondary">💻 Code</a>
+      <a href="#" class="btn btn-secondary">🎬 Video</a>
+    </div>
+
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        We study how to improve large foundation vision-language-action (VLA) systems through online reinforcement learning (RL) in real-world settings. Central to this process is the value function, which provides learning signals to guide VLA learning from experience. In practice, the value function is estimated from trajectory fragments collected from different data sources, including historical policies and intermittent human interventions. Estimating the value function of current behavior quality from the mixture data is inherently an off-policy evaluation problem. However, prior work often adopts conservative on-policy estimation for stability, which avoids direct evaluation of the current high-capacity policy and limits learning effectiveness.
+      </p>
+      <p>
+        In this paper, we propose <strong>ALOE</strong>, an action-level off-policy evaluation framework for VLA post-training. ALOE applies chunking-based temporal-difference bootstrapping to evaluate individual action sequences instead of predicting final task outcomes. This design improves effective credit assignment to critical action chunks under sparse rewards and supports stable policy improvement. We evaluate our method on three real-world manipulation tasks, including smartphone packing as a high-precision task, laundry folding as a long-horizon deformable-object task, and bimanual pick-and-place involving multi-object perception. Across all tasks, ALOE improves learning efficiency without compromising execution speed, showing that off-policy RL can be reintroduced in a reliable manner for real-world VLA post-training.
+      </p>
+    </section>
+
+    <section class="highlights">
+      <h2>Contributions</h2>
+      <ul>
+        <li>An off-policy policy evaluation framework for real-world VLA training under human-in-the-loop data collection, enabling action-level evaluation to support reliable policy improvement.</li>
+        <li>Stabilization mechanisms for action-value learning in real-world settings, enabling reliable long-horizon credit assignment for flow-based VLA policies.</li>
+        <li>Evaluation on three real-world manipulation tasks: improved task success, generalization, learning efficiency, and recovery from execution errors compared to prior VLA training methods.</li>
+      </ul>
+    </section>
+
+    <section class="citation">
+      <h2>Citation</h2>
+      <pre class="bibtex"><code>@inproceedings{yang2026aloe,
+  title     = {ALOE: Action-Level Off-Policy Evaluation for Vision-Language-Action Model Post-Training},
+  author    = {Yang, Rushuai and Wang, Hecheng and Liu, Chiming and Yan, Xiaohan and Wang, Yunlong and Du, Xuan and Yue, Shuoyu and Liu, Yongcheng and Zhang, Chuheng and Qi, Lizhe and Chen, Yi and Shan, Wei and Yao, Maoqing},
+  booktitle = {Robotics: Science and Systems (RSS)},
+  year      = {2026}
+}</code></pre>
+    </section>
+
+    <footer class="site-footer">
+      <p>Project page for ALOE (RSS 2026). Last updated: 2025.</p>
+    </footer>
+  </main>
+</body>
+</html>

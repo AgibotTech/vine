@@ -1,0 +1,264 @@
+/* RSS Paper Homepage — clean, readable, GitHub Pages friendly */
+
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #1c1917;
+  --text-muted: #57534e;
+  --accent: #1a1a2e;
+  --accent-soft: #e7e5e4;
+  --border: #e7e5e4;
+  --font-title: "DM Serif Display", Georgia, serif;
+  --font-body: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 0;
+  margin-bottom: 2rem;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.venue {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.year {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* Title & authors */
+.paper-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 0.25rem;
+  color: var(--text);
+}
+
+.paper-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+}
+
+.authors {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.authors li {
+  font-size: 1rem;
+}
+
+.authors a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.authors a:hover {
+  text-decoration: underline;
+}
+
+.authors sup {
+  font-size: 0.7em;
+  margin-left: 0.15rem;
+}
+
+.affiliations {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.affiliations li {
+  margin-bottom: 0.2rem;
+}
+
+.affiliations .note {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.affiliations .equal {
+  font-weight: 600;
+  margin-left: 0.1rem;
+}
+
+/* Hero figure */
+.hero-figure {
+  margin-bottom: 2rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.caption {
+  padding: 0.75rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Buttons */
+.action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2d2d44;
+}
+
+.btn-secondary {
+  background: var(--accent-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: #d6d3d1;
+}
+
+/* Sections */
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
+.abstract p,
+.highlights ul {
+  margin: 0;
+  color: var(--text);
+}
+
+.highlights ul {
+  padding-left: 1.25rem;
+}
+
+.highlights li {
+  margin-bottom: 0.4rem;
+}
+
+/* Citation */
+.bibtex {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 0;
+  overflow-x: auto;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.bibtex code {
+  white-space: pre;
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .action-links {
+    flex-direction: column;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+}
