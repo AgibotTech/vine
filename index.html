@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ALOE: Action-Level Off-Policy Evaluation for VLA Post-Training — RSS 2026</title>
+  <title>ALOE: Action-Level Off-Policy Evaluation for VLA Post-Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,8 +12,7 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <span class="venue">Robotics: Science and Systems (RSS)</span>
-      <span class="year">2026</span>
+      <span class="venue">ALOE</span>
     </div>
   </header>
 
@@ -44,11 +43,6 @@
       <li class="note"><span class="equal">*</span> Equal contribution &nbsp; <span class="equal">†</span> Corresponding author</li>
     </ul>
 
-    <div class="hero-figure">
-      <img src="images/teaser.png" alt="ALOE overview: actor–critic framework for VLA post-training with real-world RL stages." width="960" height="400" onerror="this.src='https://placehold.co/960x400/1a1a2e/eee?text=ALOE+Teaser+%28add+images%2Fteaser.png%29'; this.onerror=null;" />
-      <p class="caption">Overview of our real-world actor–critic framework for VLA post-training: actor (flow-matching VLA) + critic (ensemble Q-network), with data collection under human intervention, off-policy critic estimation, and policy improvement. Evaluated on smartphone packing, laundry folding, and bimanual pick-and-place.</p>
-    </div>
-
     <div class="action-links">
       <a href="#" class="btn btn-primary">📄 Paper (PDF)</a>
       <a href="#" class="btn btn-secondary">💻 Code</a>
@@ -65,6 +59,115 @@
       </p>
     </section>
 
+    <section class="method">
+      <h2>Method</h2>
+      <p>
+        We adopt a real-world actor–critic framework: the actor is a flow-matching foundation VLA and the critic is a lightweight ensemble Q-network. The actor outputs action sequences for online rollouts; the critic evaluates action chunks via Q-chunking temporal-difference updates. Training proceeds in three stages: (1) data collection under human intervention (warm-start with behavior cloning, then store policy and human-correction trajectories), (2) off-policy critic estimation on the aggregated replay buffer, and (3) policy improvement with pessimistic value estimation and advantage-weighted maximum likelihood.
+      </p>
+      <div class="hero-figure">
+        <img src="images/teaser.png" alt="ALOE overview: actor–critic framework for VLA post-training." width="960" height="400" onerror="this.src='https://placehold.co/960x400/1a1a2e/eee?text=ALOE+Teaser'; this.onerror=null;" />
+        <p class="caption">Overview of our real-world actor–critic framework for VLA post-training: actor (flow-matching VLA) + critic (ensemble Q-network), with data collection under human intervention, off-policy critic estimation, and policy improvement.</p>
+      </div>
+    </section>
+
+    <section class="task-demos">
+      <h2>Task Demos</h2>
+      <p class="section-desc">Demonstrations on three real-world manipulation tasks: smartphone packing (high-precision), laundry folding (long-horizon deformable), and bimanual pick-and-place (multi-object perception).</p>
+      <div class="media-row media-row-3">
+        <figure>
+          <video src="videos/phone_demo.mp4" controls muted loop playsinline></video>
+          <figcaption>Smartphone packing</figcaption>
+        </figure>
+        <figure>
+          <video src="videos/cloth_demo.mp4" controls muted loop playsinline></video>
+          <figcaption>Laundry folding</figcaption>
+        </figure>
+        <figure>
+          <video src="videos/pick_object_demo.mp4" controls muted loop playsinline></video>
+          <figcaption>Bimanual pick-and-place</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="continuous-operation">
+      <h2>Continuous Operation</h2>
+      <p class="section-desc">在手机装盒任务中，包装底盒与手机之间的尺寸余量仅有 1～2 毫米，几乎没有多余空间，而且盒体为硬质纸壳结构，缺乏形变缓冲。在位置控制下，一旦位姿出现轻微偏差，容易导致插入失败、打翻甚至损坏物料。下方视频为连续 21 次测试效果，仅失败 2 次。</p>
+      <div class="media-row media-row-1">
+        <figure>
+          <video src="videos/phone_success_rate.mp4" controls muted loop playsinline></video>
+          <figcaption>Smartphone packing: 21 trials, 2 failures (continuous operation)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="final-results">
+      <h2>Final Results</h2>
+      <p class="section-desc">Task success and learning curves across the three tasks (1×3).</p>
+      <div class="media-row media-row-3">
+        <figure>
+          <img src="images/phone_final_result.png" alt="Phone packing final result" />
+          <figcaption>Smartphone packing</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cloth_final_result.png" alt="Cloth folding final result" />
+          <figcaption>Laundry folding</figcaption>
+        </figure>
+        <figure>
+          <img src="images/object_final_result.png" alt="Pick-and-place final result" />
+          <figcaption>Bimanual pick-and-place</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="robustness">
+      <h2>Robustness</h2>
+      <p class="section-desc">Recovery under external disturbances: phone case assembly with disturbance (×3), then cloth folding with disturbance.</p>
+      <div class="media-row media-row-3">
+        <figure>
+          <video src="videos/phone_disturb_1.mp4" controls muted loop playsinline></video>
+          <figcaption>Phone disturb 1</figcaption>
+        </figure>
+        <figure>
+          <video src="videos/phone_disturb_2.mp4" controls muted loop playsinline></video>
+          <figcaption>Phone disturb 2</figcaption>
+        </figure>
+        <figure>
+          <video src="videos/phone_disturb_3.mp4" controls muted loop playsinline></video>
+          <figcaption>Phone disturb 3</figcaption>
+        </figure>
+      </div>
+      <div class="media-row media-row-1">
+        <figure>
+          <video src="videos/cloth_disturb.mp4" controls muted loop playsinline></video>
+          <figcaption>Cloth disturb</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="q-value">
+      <h2>Q-Value Learning</h2>
+      <p class="section-desc">Critic Q-value curve and correlation with task success.</p>
+      <div class="hero-figure">
+        <img src="images/Q_value2_cropped.png" alt="Q-value vs success" />
+        <p class="caption">Q-value curve (Q_value2_cropped).</p>
+      </div>
+    </section>
+
+    <section class="ood">
+      <h2>OOD Generalization</h2>
+      <p class="section-desc">Zero-shot generalization to unseen objects: pick unseen object 1 and 2.</p>
+      <div class="media-row media-row-2">
+        <figure>
+          <video src="videos/pick_unseen_object_1.mp4" controls muted loop playsinline></video>
+          <figcaption>Pick unseen object 1</figcaption>
+        </figure>
+        <figure>
+          <video src="videos/pick_useen_object_2.mp4" controls muted loop playsinline></video>
+          <figcaption>Pick unseen object 2</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="highlights">
       <h2>Contributions</h2>
       <ul>
@@ -76,16 +179,16 @@
 
     <section class="citation">
       <h2>Citation</h2>
-      <pre class="bibtex"><code>@inproceedings{yang2026aloe,
-  title     = {ALOE: Action-Level Off-Policy Evaluation for Vision-Language-Action Model Post-Training},
-  author    = {Yang, Rushuai and Wang, Hecheng and Liu, Chiming and Yan, Xiaohan and Wang, Yunlong and Du, Xuan and Yue, Shuoyu and Liu, Yongcheng and Zhang, Chuheng and Qi, Lizhe and Chen, Yi and Shan, Wei and Yao, Maoqing},
-  booktitle = {Robotics: Science and Systems (RSS)},
-  year      = {2026}
+      <pre class="bibtex"><code>@article{yang2026aloe,
+  title   = {ALOE: Action-Level Off-Policy Evaluation for Vision-Language-Action Model Post-Training},
+  author  = {Yang, Rushuai and Wang, Hecheng and Liu, Chiming and Yan, Xiaohan and Wang, Yunlong and Du, Xuan and Yue, Shuoyu and Liu, Yongcheng and Zhang, Chuheng and Qi, Lizhe and Chen, Yi and Shan, Wei and Yao, Maoqing},
+  journal = {arXiv preprint},
+  year    = {2026}
 }</code></pre>
     </section>
 
     <footer class="site-footer">
-      <p>Project page for ALOE (RSS 2026). Last updated: 2025.</p>
+      <p>Project page for ALOE. Last updated: 2025.</p>
     </footer>
   </main>
 </body>

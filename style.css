@@ -222,6 +222,72 @@ section h2 {
   margin-bottom: 0.4rem;
 }
 
+/* Section description */
+.section-desc {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Media rows: 1×3, 1×2, 1×1 */
+.media-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.media-row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.media-row-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.media-row-1 {
+  grid-template-columns: 1fr;
+  max-width: 480px;
+}
+
+/* Continuous operation: single video, allow wider for compilation */
+.continuous-operation .media-row-1 {
+  max-width: 720px;
+}
+
+.media-row figure {
+  margin: 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.media-row figure video,
+.media-row figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.media-row figure figcaption {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Method section: intro + teaser */
+.method .hero-figure {
+  margin-top: 1rem;
+}
+
+.method p {
+  margin: 0;
+  color: var(--text);
+}
+
 /* Citation */
 .bibtex {
   background: var(--surface);
@@ -260,5 +326,14 @@ section h2 {
 
   .btn {
     justify-content: center;
+  }
+
+  .media-row-3,
+  .media-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .media-row-1 {
+    max-width: none;
   }
 }
