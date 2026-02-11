@@ -329,6 +329,17 @@ section h2 {
   vertical-align: top;
 }
 
+/* Final Results: no border around PDF embeds (avoid black frame) */
+.final-results figure {
+  border: none;
+  box-shadow: none;
+}
+
+.final-results figure object {
+  border: none;
+  outline: none;
+}
+
 .media-row figure figcaption {
   padding: 0.4rem 0.6rem;
   font-size: 0.8rem;
