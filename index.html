@@ -21,19 +21,19 @@
     <p class="paper-subtitle">Real-world actor–critic RL for VLA with off-policy value estimation under human-in-the-loop data</p>
 
     <ul class="authors">
-      <li><a href="#" target="_blank" rel="noopener">Rushuai Yang</a><sup>1,2</sup><span class="equal">*</span></li>
-      <li><a href="#" target="_blank" rel="noopener">Hecheng Wang</a><sup>1,3</sup><span class="equal">*</span></li>
-      <li><a href="#" target="_blank" rel="noopener">Chiming Liu</a><sup>1</sup><span class="equal">*†</span></li>
-      <li><a href="#" target="_blank" rel="noopener">Xiaohan Yan</a><sup>1</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Yunlong Wang</a><sup>1</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Xuan Du</a><sup>1</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Shuoyu Yue</a><sup>1</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Yongcheng Liu</a><sup>1</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Chuheng Zhang</a><sup>4</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Lizhe Qi</a><sup>3</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Yi Chen</a><sup>2</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Wei Shan</a><sup>1</sup></li>
-      <li><a href="#" target="_blank" rel="noopener">Maoqing Yao</a><sup>1</sup></li>
+      <li>Rushuai Yang<sup>1,2</sup><span class="equal">*</span></li>
+      <li>Hecheng Wang<sup>1,3</sup><span class="equal">*</span></li>
+      <li>Chiming Liu<sup>1</sup><span class="equal">*†</span></li>
+      <li>Xiaohan Yan<sup>1</sup></li>
+      <li>Yunlong Wang<sup>1</sup></li>
+      <li>Xuan Du<sup>1</sup></li>
+      <li>Shuoyu Yue<sup>1</sup></li>
+      <li>Yongcheng Liu<sup>1</sup></li>
+      <li>Chuheng Zhang<sup>4</sup></li>
+      <li>Lizhe Qi<sup>3</sup></li>
+      <li>Yi Chen<sup>2</sup></li>
+      <li>Wei Shan<sup>1</sup></li>
+      <li>Maoqing Yao<sup>1</sup></li>
     </ul>
     <p class="affiliations affiliations--compact"><sup>1</sup> AgiBot &nbsp; <sup>2</sup> The Hong Kong University of Science and Technology &nbsp; <sup>3</sup> Fudan University &nbsp; <sup>4</sup> Independent Researcher &nbsp; <span class="equal">*</span> Equal contribution &nbsp; <span class="equal">†</span> Corresponding author</p>
 
@@ -129,11 +129,13 @@
 
     <section class="q-value">
       <h2>Q-Value Learning</h2>
-      <p class="section-desc">The learned action-value function identifies failure modes and successful recovery: the Q-value drops sharply when the robot fails a critical action (e.g., scooping the phone) and rises on recovery, providing finer credit assignment than trajectory-level estimation. The two figures below are shown in parallel: Q-value vs. task success (left) and additional Q(s,a) visualization (right).</p>
-      <div class="media-row media-row-2">
+      <p class="section-desc">The learned action-value function identifies failure modes and successful recovery: the Q-value drops sharply when the robot fails a critical action (e.g., scooping the phone) and rises on recovery, providing finer credit assignment than trajectory-level estimation.</p>
+      <div class="media-row media-row-1">
         <figure>
           <img src="images/Q_value2_cropped.png" alt="Q-value and task success" loading="eager" />
         </figure>
+      </div>
+      <div class="media-row media-row-1">
         <figure>
           <img src="images/q_visualization_additional.png" alt="Q(s,a) visualization" loading="eager" />
         </figure>
