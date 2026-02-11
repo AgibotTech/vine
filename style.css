@@ -150,6 +150,11 @@ body {
   margin-top: 0.5rem;
 }
 
+.ood-objects-label {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
 /* Hero figure — compact, no black edges */
 .hero-figure {
   margin-bottom: 1.5rem;
@@ -261,6 +266,32 @@ section h2 {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Horizontal scroll: one large video at a time (Task Demos, Robustness phone disturb) */
+.media-row-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.media-row-scroll figure {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  min-width: min(85vw, 520px);
+  max-width: min(85vw, 520px);
+}
+
+.media-row-scroll figure video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .media-row-2 {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -285,6 +316,11 @@ section h2 {
 
 /* Continuous operation: single video, allow wider for compilation */
 .continuous-operation .media-row-1 {
+  max-width: 720px;
+}
+
+/* Q-value: larger figures (use full content width) */
+.q-value .media-row-1 {
   max-width: 720px;
 }
 

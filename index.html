@@ -53,7 +53,7 @@
     <section class="method">
       <h2>Method</h2>
       <p>
-        We adopt a real-world actor–critic framework: the actor is a flow-matching foundation VLA and the critic is a lightweight ensemble Q-network. The actor outputs action sequences for online rollouts; the critic evaluates action chunks via Q-chunking temporal-difference updates. Training proceeds in three stages: (1) data collection under human intervention (warm-start with behavior cloning, then store policy and human-correction trajectories), (2) off-policy critic estimation on the aggregated replay buffer, and (3) policy improvement with pessimistic value estimation and advantage-weighted maximum likelihood.
+        We adopt a real-world actor–critic framework: the actor is a flow-matching foundation VLA and the critic is a lightweight ensemble Q-network. The actor outputs action sequences for online rollouts; the critic evaluates action chunks via Q-chunking temporal-difference updates. Training proceeds in three stages: (1) data collection under human intervention (warm-start with behavior cloning, then store policy and human-correction trajectories), (2) off-policy critic estimation on the aggregated data buffer, and (3) policy improvement with pessimistic value estimation and advantage-weighted maximum likelihood.
       </p>
       <div class="hero-figure">
         <img src="images/teaser.png" alt="ALOE overview: actor–critic framework for VLA post-training." width="960" height="400" loading="eager" onerror="this.src='https://placehold.co/960x400/1a1a2e/eee?text=ALOE+Teaser'; this.onerror=null;" />
@@ -64,7 +64,7 @@
       <h2>Task Demos & Final Results</h2>
       <h3 class="subsection-title">Task Demos</h3>
       <p class="section-desc">We evaluate ALOE on three representative tasks designed to stress long-horizon reasoning, precise action selection, and robustness: <strong>Pack Smart Phone</strong> (align and attach phone case onto device body; precise pose alignment and recovery from misalignment), <strong>Folding Laundry</strong> (long-horizon deformable-object manipulation with grasp, flatten, and sequential folds), and <strong>Product Sorting</strong> (bimanual pick-place: identify, manipulate, and place objects from bins onto a conveyor belt).</p>
-      <div class="media-row media-row-3">
+      <div class="media-row media-row-scroll">
         <figure>
           <video src="videos/phone_demo.mp4" controls muted loop playsinline autoplay></video>
         </figure>
@@ -97,7 +97,7 @@
     </section>
 
     <section class="continuous-operation">
-      <h2>Continuous Operation</h2>
+      <h2>Success Rate</h2>
       <p class="section-desc">Pack Smart Phone is precision-critical: the phone case (17.8cm by 8.8cm) has minimal clearance inside the rigid container (17.5cm by 8.6cm). Under position control, slight pose errors can cause insertion failure, tipping, or damage. The video shows 21 consecutive trials with 19 successes.</p>
       <div class="media-row media-row-1">
         <figure>
@@ -109,7 +109,7 @@
     <section class="robustness">
       <h2>Robustness</h2>
       <p class="section-desc">We inject random perturbations during execution (e.g., to the garment in Folding Laundry or to the assembly in Pack Smart Phone) and measure whether the policy can re-adjust and still complete the task — evaluating recovery from unexpected disturbances.</p>
-      <div class="media-row media-row-3">
+      <div class="media-row media-row-scroll">
         <figure>
           <video src="videos/phone_disturb_1.mp4" controls muted loop playsinline autoplay></video>
         </figure>
@@ -151,6 +151,19 @@
         </figure>
         <figure>
           <video src="videos/pick_useen_object_2.mp4" controls muted loop playsinline autoplay></video>
+        </figure>
+      </div>
+      <p class="section-desc ood-objects-label">Objects used during training (left) and unseen objects used for zero-shot evaluation (right).</p>
+      <div class="media-row media-row-2">
+        <figure>
+          <object data="images/seen_object.pdf" type="application/pdf" width="100%" height="320" title="Seen objects (training)">
+            <p><a href="images/seen_object.pdf">Download PDF</a></p>
+          </object>
+        </figure>
+        <figure>
+          <object data="images/unseen_object.pdf" type="application/pdf" width="100%" height="320" title="Unseen objects (zero-shot)">
+            <p><a href="images/unseen_object.pdf">Download PDF</a></p>
+          </object>
         </figure>
       </div>
     </section>
