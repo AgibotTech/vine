@@ -319,9 +319,20 @@ section h2 {
   max-width: 720px;
 }
 
-/* Q-value: larger figures (use full content width) */
+/* Q-value: break out for wider figures (larger display) */
+.q-value {
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .q-value .media-row-1 {
-  max-width: 720px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Center all media rows (video/image blocks) within section */
