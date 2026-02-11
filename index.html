@@ -108,6 +108,7 @@
     <section class="robustness">
       <h2>Robustness</h2>
       <p class="section-desc">We inject random perturbations during execution (e.g., to the garment in Folding Laundry or to the assembly in Pack Smart Phone) and measure whether the policy can re-adjust and still complete the task — evaluating recovery from unexpected disturbances.</p>
+      <p class="section-desc ood-objects-label">Pack Smart Phone — recovery under disturbance.</p>
       <div class="media-row media-row-scroll">
         <figure>
           <video src="videos/phone_disturb_1.mp4" controls muted loop playsinline autoplay></video>
@@ -119,6 +120,7 @@
           <video src="videos/phone_disturb_3.mp4" controls muted loop playsinline autoplay></video>
         </figure>
       </div>
+      <p class="section-desc ood-objects-label">Folding Laundry — recovery under disturbance.</p>
       <div class="media-row media-row-1">
         <figure>
           <video src="videos/cloth_disturb.mp4" controls muted loop playsinline autoplay></video>
@@ -143,7 +145,14 @@
 
     <section class="ood">
       <h2>Zero-Shot Generalization</h2>
-      <p class="section-desc">We evaluate generalization on the Product Sorting task by replacing objects with ones never seen during training (different shapes and colors). The policy is evaluated without fine-tuning, assessing the VLA’s ability to generalize to unseen object appearances and geometries.</p>
+      <p class="section-desc">We evaluate generalization on the Product Sorting task by replacing objects with ones never seen during training (different shapes and colors). The policy is evaluated without fine-tuning, assessing the VLA’s ability to generalize to unseen object appearances and geometries. Below: in-distribution (seen objects) for comparison, then OOD (unseen objects) in parallel.</p>
+      <p class="section-desc ood-objects-label">In-distribution (seen objects).</p>
+      <div class="media-row media-row-1">
+        <figure>
+          <video src="videos/pick_object_demo.mp4" controls muted loop playsinline autoplay></video>
+        </figure>
+      </div>
+      <p class="section-desc ood-objects-label">OOD (unseen objects).</p>
       <div class="media-row media-row-2">
         <figure>
           <video src="videos/pick_unseen_object_1.mp4" controls muted loop playsinline autoplay></video>
