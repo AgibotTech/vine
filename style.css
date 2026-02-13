@@ -319,11 +319,12 @@ section h2 {
   max-width: 720px;
 }
 
-/* Q-value: break out for wider figures (larger display) */
+/* Q-value: break out for wider figures, keep content centered */
 .q-value {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100vw;
-  max-width: 100%;
-  margin-left: calc(50% - 50vw);
   box-sizing: border-box;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
