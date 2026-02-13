@@ -319,19 +319,9 @@ section h2 {
   max-width: 720px;
 }
 
-/* Q-value: break out for wider figures, keep content centered */
-.q-value {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  box-sizing: border-box;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
+/* Q-value: text aligns with other sections; figures smaller and centered */
 .q-value .media-row-1 {
-  max-width: 960px;
+  max-width: 520px;
   margin-left: auto;
   margin-right: auto;
 }
