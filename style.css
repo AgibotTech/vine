@@ -1,4 +1,4 @@
-/* RSS Paper Homepage — clean, readable, GitHub Pages friendly */
+/* VINE project page — clean, readable, GitHub Pages friendly (/vine) */
 
 :root {
   --bg: #fafaf9;
@@ -355,6 +355,34 @@ section h2 {
   color: var(--text);
 }
 
+.abstract,
+.algorithm-section {
+  margin: 2.5rem 0;
+}
+
+.abstract > h2,
+.algorithm-section > h2 {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.abstract > p {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.1rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.abstract .overview-figure {
+  margin-top: 1.25rem;
+}
+
 .abstract p,
 .highlights ul {
   margin: 0;
@@ -374,6 +402,33 @@ section h2 {
   margin: 0 0 1rem;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.task-demos-and-results {
+  margin-top: 2.75rem;
+}
+
+.task-demos-and-results > h2 {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.task-demos-and-results .subsection-title {
+  font-size: 1.18rem;
+  line-height: 1.25;
+  margin: 2rem 0 0.55rem;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--accent);
+  color: var(--text);
+}
+
+.task-demos-and-results .section-desc {
+  font-size: 0.96rem;
+  line-height: 1.55;
+  margin-bottom: 1.1rem;
 }
 
 .math {
@@ -491,6 +546,272 @@ section h2 {
 
 .mini-table-grid .metric-table {
   margin: 0;
+}
+
+.video-progression {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.video-progression figure {
+  margin: 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-progression figure video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.video-progression figure figcaption {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+.video-progression .metric-table {
+  margin: 0;
+}
+
+.demo-row-title {
+  margin: 1.25rem 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.scroll-hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.task-demos-and-results figure figcaption {
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.task-demos-and-results .metric-table th {
+  font-size: 0.9rem;
+}
+
+/* Algorithm section (FQL-style collapsible pseudocode) */
+.algorithm-section {
+  margin: 2.5rem 0;
+}
+
+.algorithm-section h2 {
+  margin-bottom: 1rem;
+}
+
+.algorithm-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.algorithm-points li {
+  position: relative;
+  margin: 0;
+  padding: 0.75rem 0.85rem 0.75rem 1.9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.42;
+}
+
+.algorithm-points li::before {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  top: 1rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.algo-math {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+  font-size: 0.95em;
+}
+
+.algorithm-disclosure {
+  margin: 1rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.algorithm-disclosure summary {
+  cursor: pointer;
+  padding: 0.95rem 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background: var(--accent);
+  list-style: none;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.algorithm-disclosure summary:hover {
+  background: #2d2d44;
+}
+
+.algorithm-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.algorithm-disclosure[open] summary {
+  border-bottom: 1px solid var(--border);
+  background: var(--accent);
+}
+
+.algorithm-panel {
+  padding: 1.1rem 1.25rem 1.25rem;
+  overflow-x: auto;
+}
+
+.offline-domains-disclosure {
+  margin-top: 0.75rem;
+}
+
+.offline-domains-panel {
+  padding-top: 0.85rem;
+}
+
+.offline-domains-caption {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.table-figure-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.table-figure-scroll a {
+  display: block;
+}
+
+.table-figure-scroll img {
+  display: block;
+  width: max(100%, 1080px);
+  height: auto;
+}
+
+.algorithm-caption {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.algorithm-code {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: algo-line;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  min-width: 680px;
+}
+
+.algorithm-code > li {
+  counter-increment: algo-line;
+  position: relative;
+  padding-left: 2.2rem;
+  margin: 0.12rem 0;
+  white-space: nowrap;
+}
+
+.algorithm-code > li::before {
+  content: counter(algo-line);
+  position: absolute;
+  left: 0;
+  width: 1.6rem;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+.algorithm-code .indent-1 {
+  padding-left: 3.4rem;
+}
+
+.algorithm-code .indent-2 {
+  padding-left: 4.6rem;
+}
+
+.algorithm-code .kw {
+  font-weight: 700;
+}
+
+.algorithm-code .fn {
+  font-weight: 600;
+}
+
+.algorithm-code .var,
+.algorithm-code .dist {
+  font-style: italic;
+}
+
+.algorithm-code .hvar {
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+
+.algorithm-code .hvar::before {
+  content: "^";
+  position: absolute;
+  left: -0.05em;
+  top: -0.55em;
+  font-size: 0.72em;
+  font-style: normal;
+}
+
+.algorithm-code .algo-comment {
+  margin-left: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.92em;
+}
+
+.algorithm-code .strike-red {
+  color: #dc2626;
+  text-decoration: line-through;
+  text-decoration-color: #dc2626;
+}
+
+.algorithm-code .strike-comment {
+  color: #dc2626;
+  font-style: italic;
 }
 
 .mix-viz {
@@ -650,6 +971,21 @@ section h2 {
   scroll-snap-align: start;
   min-width: min(85vw, 520px);
   max-width: min(85vw, 520px);
+  margin: 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.media-row-scroll figure figcaption {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
 }
 
 .media-row-scroll figure video {
@@ -662,6 +998,29 @@ section h2 {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+.more-experiments {
+  margin-top: 0.75rem;
+}
+
+.more-experiments figure video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+
+.td3bc-comparison {
+  margin: 0.5rem 0 1.5rem;
+}
+
+.td3bc-comparison .media-row-2 {
+  grid-template-columns: repeat(2, minmax(0, 300px));
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .media-row-2 {
@@ -734,6 +1093,19 @@ section h2 {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   vertical-align: top;
+}
+
+.td3bc-comparison .media-row figure {
+  width: 100%;
+  max-width: 300px;
+}
+
+.td3bc-comparison .media-row figure video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #fff;
 }
 
 .media-row figure img {
@@ -846,8 +1218,13 @@ section h2 {
   .intuition-grid,
   .critic-points,
   .method-steps,
+  .algorithm-points,
   .stat-grid,
   .mini-table-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-progression {
     grid-template-columns: 1fr;
   }
 
