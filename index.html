@@ -203,7 +203,7 @@
         </figure>
       </div>
       <h3 class="subsection-title">Learning Progression from Scratch</h3>
-      <p class="section-desc">This 25-minute from-scratch run shows <strong>VINE</strong> learning socket insertion in real time. The policy starts from random motion, finds the socket within a few minutes, turns early one-off successes into short streaks, and reaches 20 consecutive successful insertions by 20 minutes.</p>
+      <p class="section-desc">This 25-minute run shows VINE can train a real-world manipulation policy entirely from scratch. Without any behavior cloning warm-up or demonstrations, both the actor and critic heads are randomly initialized and optimized through human-in-the-loop reinforcement learning. The policy uses only a lightweight 3M-parameter network with a ResNet-10 visual encoder. Starting from random exploration, it discovers the socket within a few minutes, quickly transforms isolated successes into consistent behavior, and achieves 20 consecutive successful insertions after only 20 minutes of real-world interaction.</p>
       <div class="video-progression">
         <figure>
           <video src="videos/vine_fromscratch.mp4" controls muted loop playsinline autoplay disablePictureInPicture></video>
