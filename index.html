@@ -203,7 +203,16 @@
         </figure>
       </div>
       <h3 class="subsection-title">Learning Progression from Scratch</h3>
-      <p class="section-desc">This 25-minute run shows VINE can train a real-world manipulation policy entirely from scratch. Without any behavior cloning warm-up or demonstrations, both the actor and critic heads are randomly initialized and optimized through human-in-the-loop reinforcement learning. The policy uses only a lightweight 3M-parameter network with a ResNet-10 visual encoder. Starting from random exploration, it discovers the socket within a few minutes, quickly transforms isolated successes into consistent behavior, and achieves 20 consecutive successful insertions after only 20 minutes of real-world interaction.</p>
+      <p class="section-desc">
+This 25-minute run shows <strong>VINE can train a real-world manipulation policy entirely from scratch</strong>.
+Without any <strong>behavior cloning warm-up or demonstrations</strong>, both the actor and critic heads are
+<strong>randomly initialized</strong> and optimized through human-in-the-loop reinforcement learning.
+The policy uses only a lightweight <strong>3M-parameter network</strong> with a
+<strong>ResNet-10</strong> visual encoder.
+Starting from random exploration, it discovers the socket within a few minutes, quickly transforms isolated
+successes into consistent behavior, and achieves <strong>20 consecutive successful insertions</strong>
+after only <strong>20 minutes</strong> of real-world interaction.
+</p>
       <div class="video-progression">
         <figure>
           <video src="videos/vine_fromscratch.mp4" controls muted loop playsinline autoplay disablePictureInPicture></video>
@@ -286,7 +295,9 @@
           </tbody>
         </table>
       </div>
-      <p class="section-desc">BC policy is trained from 15 human demonstrations. Human-intervention ratio is computed as intervention steps / total rollout steps.</p>
+      <p class="section-desc">
+BC policy is pi05 trained from 15 human demonstrations. Human-intervention ratio is computed as intervention steps / total rollout steps. DSRL, RLT, and EXPO use a BC policy for base, while VINE, SAC-Flow, and Hil-SERL learn directly from scratch without BC pretraining.
+</p>
 
       <h3 class="subsection-title">More Real-World Experiments</h3>
       <p class="section-desc">Additional from-scratch real-world fine-tuning runs with <strong>VINE</strong> on contact-rich manipulation tasks.</p>
